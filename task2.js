@@ -33,7 +33,10 @@ const movie = {
     console.log("genre = " + this.genre);
   },
   getCast() {
-    const cast = this.cast.sort((a, b) => a.name - b.name);
+    const cast = this.cast.sort((a, b) => {
+      if (a.name < b.name) return -1;
+      if (a.name < b.name) return 1;
+    });
     console.log(cast);
   },
   settMovieTitle: function (newTitle) {
